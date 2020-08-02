@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "webpack --mode development",
+    "start": "nodemon --watch webpack.config.js --exec \"webpack-dev-server --mode development\"",
+    "build": "webpack --mode production"
   },
   "repository": {
     "type": "git",
@@ -18,7 +20,11 @@
   },
   "homepage": "https://github.com/rizkyzhang/covid19-radar#readme",
   "devDependencies": {
+    "@babel/core": "^7.11.0",
+    "@babel/preset-env": "^7.11.0",
     "babel-eslint": "^10.0.3",
+    "babel-loader": "^8.1.0",
+    "css-loader": "^4.2.0",
     "eslint": "^7.6.0",
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-config-babel": "^9.0.0",
@@ -26,6 +32,13 @@
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-standard": "^4.0.1",
-    "prettier": "^1.19.1"
+    "html-webpack-plugin": "^4.3.0",
+    "nodemon": "^2.0.4",
+    "prettier": "^1.19.1",
+    "raw-loader": "^4.0.1",
+    "style-loader": "^1.2.1",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
   }
 }
