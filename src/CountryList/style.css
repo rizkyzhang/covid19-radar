@@ -1,0 +1,138 @@
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+
+  margin: 0;
+  padding: 0;
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+:host {
+  display: none;
+  opacity: 0;
+
+  width: auto;
+  margin-bottom: 3rem;
+  padding: 1.5rem;
+
+  background: var(--primary-color);
+  border-radius: 10px;
+  animation:  bounceIn 0.5s;
+}
+
+:host(.active) {
+  display: block;
+  opacity: 1;
+
+  animation:  bounceIn 0.5s;
+}
+
+.country-list__header {
+  display: flex;
+  align-items: center;
+
+  margin-bottom: 1rem;
+  padding: 1rem;
+}
+
+.header__search {
+  width: 90%;
+  margin-right: 2rem;
+  padding: 1rem;
+
+  background: var(--secondary-color);
+  border-radius: 10px;
+  border: none;
+  outline: none;
+
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.header__close-button {
+  width: 10%;
+
+  background: none;
+  border: none;
+
+  color: var(--deaths-color);
+  font-weight: bold;
+  font-size: 3.5rem;
+  outline: none;
+}
+
+.header__close-button:hover {
+  cursor: pointer;
+}
+
+.country-list {
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+  max-height: 500px;
+  height: auto;
+
+  list-style: none;
+}
+
+.country-list::-webkit-scrollbar {
+  width: 20px;
+}
+
+.country-list::-webkit-scrollbar-track {
+  background: #222;
+}
+
+.country-list::-webkit-scrollbar-thumb {
+  background-color: #333;
+  border-radius: 20px;
+  border: 5px solid #222;
+}
+
+.country-list__item {
+  padding: 1.5rem;
+}
+
+.country-list__item:hover {
+  background: var(--secondary-color);
+  cursor: pointer;
+}
+
+.item__flag {
+  width: 2rem;
+  height: 1.5rem;
+  margin-right: 1rem;
+}
+
+@media only screen and (min-width: 490px) {
+  .country-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+  }
+}
+
+@media only screen and (min-width: 700px) {
+  .country-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
