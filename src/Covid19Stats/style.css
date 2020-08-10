@@ -1,0 +1,94 @@
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+
+  margin: 0;
+  padding: 0;
+}
+
+:host {
+  display: block;
+
+  margin-bottom: 3rem;
+}
+
+.covid19-stats__box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: auto;
+  padding: 1.5rem;
+
+  background: var(--primary-color);
+  border-radius: 10px;
+}
+
+.covid19-stats__box:not(:last-of-type) {
+  margin-bottom: 1.5rem;
+}
+
+.covid19-stats__box > p:not(:last-of-type) {
+  margin-bottom: 1rem;
+}
+
+.cases__total,
+.deaths__total,
+.recovered__total,
+.active__total,
+.tests__total {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.cases__title,
+.cases__total {
+  color: var(--cases-color);
+}
+
+.deaths__title,
+.deaths__total {
+  color: var(--deaths-color);
+}
+
+.recovered__title,
+.recovered__total {
+  color: var(--recovered-color);
+}
+
+.active__title,
+.active__total {
+  color: var(--active-color);
+}
+
+.tests__title,
+.tests__total {
+  color: var(--tests-color);
+}
+
+@media only screen and (min-width: 380px) {
+  :host {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    gap: 1.5rem;
+  }
+
+  .covid19-stats__box:not(:last-of-type) {
+    margin: 0;
+  }
+
+  .covid19-stats__tests {
+    grid-column: span 2;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  :host {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
