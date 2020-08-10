@@ -1,0 +1,51 @@
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+
+  margin: 0;
+  padding: 0;
+}
+
+:host {
+  display: block;
+
+  margin-bottom: 3rem;
+}
+
+.country-selector {
+  display: flex;
+  align-items: center;
+
+  max-width: 500px;
+  width: auto;
+  padding: 1rem;
+
+  background: var(--primary-color);
+  border-radius: 10px;
+  border: none;
+
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  outline: none;
+}
+
+.country-selector:hover {
+  cursor: pointer;
+}
+
+.country-selector__text {
+  margin-right: 1rem;
+}
+
+.country-selector__chevron {
+  transition: ease-in-out 0.5s;
+}
+
+.country-selector__chevron.active {
+  transform: rotate(180deg);
+  transition: ease-in-out 0.5s;
+}
