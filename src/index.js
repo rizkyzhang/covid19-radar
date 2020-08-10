@@ -1,5 +1,6 @@
 import "core-js/stable";
 import "regenerator-runtime/runtime";
+
 import "./style.css";
 import "./components/CountrySelector";
 import "./components/CountryInfo";
@@ -17,23 +18,25 @@ template.innerHTML = `
       display: block;
     }
 
+    :host::-webkit-scrollbar {
+      width: 20px;
+    }
+
+    :host::-webkit-scrollbar-track {
+      background: #222;
+    }
+
+    :host::-webkit-scrollbar-thumb {
+      background-color: #333;
+      border-radius: 20px;
+      border: 5px solid #222;
+    }
+
     .app-title {
       margin-bottom: 2rem;
 
       color: var(--recovered-color);
       font-size: 3rem;
-    }
-
-    :host::-webkit-scrollbar {
-      width: 20px; /* width of the entire scrollbar */
-    }
-    :host::-webkit-scrollbar-track {
-      background: #222; /* color of the tracking area */
-    }
-    :host::-webkit-scrollbar-thumb {
-      background-color: #333; /* color of the scroll thumb */
-      border-radius: 20px; /* roundness of the scroll thumb */
-      border: 5px solid #222; /* creates padding around scroll thumb */
     }
     
     footer {
@@ -88,24 +91,14 @@ class Covid19Radar extends HTMLElement {
     this.$covid19Stats = this._shadowRoot.querySelector("covid19-stats");
     this.$covid19Chart = this._shadowRoot.querySelector("covid19-chart");
 
-    this.addEventListener(
-      "onCountryChanged",
-      this._updateSelectedCountry.bind(this),
-    );
+    this.addEventListener("onCountryChanged", this._updateSelectedCountry.bind(this));
     this.addEventListener("onStatsFetched", this._updateLastUpdated.bind(this));
     this.addEventListener("onDropdownToggle", () => {
+      this.$chevron.classList.toggle("active");
       this.$countryList.classList.toggle("active");
       this.$searchCountry.focus();
-      this.$chevron.classList.toggle("active");
     });
   }
-
-  // connectedCallback() {
-  // this.$countryInfo.lastUpdated = this.state.lastUpdated;
-  // this.$countryInfo.selectedCountry = this.state.selectedCountry;
-  // this.$covid19Stats.selectedCountry = this.state.selectedCountry;
-  // this.$covid19Chart.selectedCountry = this.state.selectedCountry;
-  // }
 
   _updateSelectedCountry(event) {
     this.state.selectedCountry = event.detail.selectedCountry;
