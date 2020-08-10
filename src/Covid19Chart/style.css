@@ -1,0 +1,46 @@
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+
+  margin: 0;
+  padding: 0;
+}
+
+:host {
+  display: block;
+  position: relative;
+
+  width: auto;
+  height: 300px;
+
+  margin-right: 2rem;
+  margin-bottom: 5rem;
+}
+
+canvas {
+  padding: 1rem;
+
+  background: var(--primary-color);
+  border-radius: 10px;
+}
+
+@media only screen and (min-width: 500px) {
+  :host {
+    height: 350px;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  :host {
+    height: 400px;
+  }
+}
+
+@media only screen and (min-width: 700px) {
+  :host {
+    height: 450px;
+  }
+}
