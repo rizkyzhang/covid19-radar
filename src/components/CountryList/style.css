@@ -35,14 +35,14 @@
 
   background: var(--primary-color);
   border-radius: 10px;
-  animation:  bounceIn 0.5s;
+  animation: bounceIn 0.5s;
 }
 
 :host(.active) {
   display: block;
   opacity: 1;
 
-  animation:  bounceIn 0.5s;
+  animation: bounceIn 0.5s;
 }
 
 .country-list__header {
