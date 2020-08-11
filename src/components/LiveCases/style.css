@@ -32,7 +32,7 @@
   padding: 1rem 0;
 
   color: var(--cases-color);
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   font-weight: bold;
   text-align: center;
 }
@@ -72,7 +72,7 @@ ul::-webkit-scrollbar-thumb {
   border: 5px solid #222;
 }
 
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 800px) {
   :host {
     display: flex;
 
