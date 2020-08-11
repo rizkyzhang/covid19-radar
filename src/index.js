@@ -36,7 +36,7 @@ template.innerHTML = `
       margin-bottom: 2rem;
 
       color: var(--recovered-color);
-      font-size: 3rem;
+      font-size: 2.7rem;
     }
     
     footer {
@@ -52,7 +52,7 @@ template.innerHTML = `
     }
   </style>
 
-  <h1 class="app-title">COVID19-RADAR</h1>
+  <h1 class="app-title">COVID-19 RADAR</h1>
 
   <country-info></country-info>
 
