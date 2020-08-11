@@ -14,7 +14,7 @@
   position: relative;
 
   width: auto;
-  height: 300px;
+  height: 250px;
 
   margin-right: 2rem;
   margin-bottom: 5rem;
@@ -42,5 +42,11 @@ canvas {
 @media only screen and (min-width: 700px) {
   :host {
     height: 450px;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  :host {
+    height: 500px;
   }
 }
