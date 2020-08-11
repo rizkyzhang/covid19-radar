@@ -1,0 +1,107 @@
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+
+  margin: 0;
+  padding: 0;
+}
+
+:host {
+  display: block;
+}
+
+.covid19-info__prevention,
+.covid19-info__symptoms {
+  height: auto;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+
+  background: var(--primary-color);
+  border-radius: 10px;
+}
+
+.covid19-info__prevention {
+  margin-bottom: 3rem;
+}
+
+.prevention__title {
+  color: var(--recovered-color);
+}
+
+.prevention__list {
+  margin-bottom: 1rem;
+}
+
+.prevention__item {
+  margin-bottom: 0.5rem;
+  margin-left: 1.5rem;
+}
+
+.prevention__extra-info {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.prevention__title,
+.symptoms__title {
+  margin-bottom: 1rem;
+
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.symptoms__title {
+  color: var(--cases-color);
+}
+
+.symptoms__common,
+.symptoms__less-common,
+.symptoms__serious {
+  margin-bottom: 1rem;
+}
+
+.common__title,
+.less-common__title,
+.serious__title {
+  margin-bottom: 0.5rem;
+}
+
+.common__item,
+.less-common__item,
+.serious__item {
+  margin-left: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.source {
+  color: gray;
+  text-align: right;
+}
+
+.source__link {
+  color: var(--tests-color);
+  text-decoration: underline;
+}
+
+@media only screen and (min-width: 700px) {
+  :host {
+    display: flex;
+  }
+
+  .covid19-info__prevention {
+    margin-right: 2rem;
+    margin-bottom: 0;
+  }
+
+  .covid19-info__symptoms {
+    margin-bottom: 0;
+  }
+
+  .covid19-info__prevention,
+  .covid19-info__symptoms {
+    width: 50%;
+  }
+}
