@@ -1,0 +1,91 @@
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+
+  margin: 0;
+  padding: 0;
+}
+
+:host {
+  display: block;
+
+  margin-bottom: 3rem;
+}
+
+.live-cases__worldwide,
+.live-cases__indonesia {
+  padding: 0 1rem;
+
+  background: var(--primary-color);
+  border-radius: 10px;
+}
+
+.live-cases__worldwide {
+  margin-bottom: 3rem;
+}
+
+.worldwide__title,
+.indonesia__title {
+  padding: 1rem 0;
+
+  color: var(--cases-color);
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.worldwide__countries,
+.indonesia__provinces {
+  list-style: none;
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+  max-height: 500px;
+  height: auto;
+  padding-bottom: 1.5rem;
+}
+
+.worldwide__country,
+.indonesia__province {
+  padding: 1rem;
+}
+
+.worldwide__country:nth-child(odd),
+.indonesia__province:nth-child(odd) {
+  background: var(--secondary-color);
+}
+
+ul::-webkit-scrollbar {
+  width: 20px;
+}
+
+ul::-webkit-scrollbar-track {
+  background: #222;
+}
+
+ul::-webkit-scrollbar-thumb {
+  background-color: #333;
+  border-radius: 20px;
+  border: 5px solid #222;
+}
+
+@media only screen and (min-width: 700px) {
+  :host {
+    display: flex;
+
+    margin-bottom: 3rem;
+  }
+
+  .live-cases__worldwide {
+    margin-right: 2rem;
+    margin-bottom: 0;
+  }
+
+  .live-cases__worldwide,
+  .live-cases__indonesia {
+    width: 50%;
+  }
+}
