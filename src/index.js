@@ -46,6 +46,10 @@ template.innerHTML = `
       margin: 3rem 0;
       text-align: center;
     }
+
+    .heart {
+      color: red;
+    }
   </style>
 
   <h1 class="app-title">COVID19-RADAR</h1>
@@ -64,7 +68,7 @@ template.innerHTML = `
 
   <covid19-info></covid19-info>
 
-  <footer>Created with 💖 by Rizky</footer>
+  <footer>Created with <span class="heart">❤️</span> by Rizky</footer>
 `;
 
 class Covid19Radar extends HTMLElement {
