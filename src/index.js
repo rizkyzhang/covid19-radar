@@ -33,7 +33,7 @@ template.innerHTML = `
     }
 
     .app-title {
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
 
       color: var(--recovered-color);
       font-size: 2.7rem;
