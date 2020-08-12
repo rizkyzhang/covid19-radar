@@ -80,6 +80,7 @@ class Covid19Radar extends HTMLElement {
 
     this.state = {
       selectedCountry: "",
+      countryFlag: "",
       lastUpdated: "",
     };
 
@@ -106,7 +107,9 @@ class Covid19Radar extends HTMLElement {
 
   _updateSelectedCountry(event) {
     this.state.selectedCountry = event.detail.selectedCountry;
+    this.state.countryFlag = event.detail.countryFlag;
     this.$countryInfo.selectedCountry = this.state.selectedCountry;
+    this.$countryInfo.countryFlag = this.state.countryFlag;
     this.$covid19Stats.selectedCountry = this.state.selectedCountry;
     this.$covid19Chart.selectedCountry = this.state.selectedCountry;
   }
