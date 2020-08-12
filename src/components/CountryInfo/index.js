@@ -8,7 +8,7 @@ template.innerHTML = `
   </style>
 
   <p class="current-country"></p>
-  <p class="last-updated"></p>
+  <p class="last-updated">Loading...</p>
 `;
 
 class CountryInfo extends HTMLElement {
@@ -20,7 +20,7 @@ class CountryInfo extends HTMLElement {
 
     this.props = {
       selectedCountry: "Worldwide",
-      lastUpdated: "Loading...",
+      lastUpdated: "",
     };
 
     this.$currentCountry = this._shadowRoot.querySelector(".current-country");
