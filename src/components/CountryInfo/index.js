@@ -20,6 +20,7 @@ class CountryInfo extends HTMLElement {
 
     this.props = {
       selectedCountry: "Worldwide",
+      countryFlag: "🌐",
       lastUpdated: "",
     };
 
@@ -32,7 +33,7 @@ class CountryInfo extends HTMLElement {
   }
 
   _renderCountryInfo() {
-    this.$currentCountry.textContent = this.props.selectedCountry;
+    this.$currentCountry.textContent = `${this.props.countryFlag} ${this.props.selectedCountry}`;
     this.$lastUpdated.textContent = `Last Updated: ${this.props.lastUpdated}`;
   }
 
@@ -43,6 +44,15 @@ class CountryInfo extends HTMLElement {
 
   get selectedCountry() {
     return this.props.selectedCountry;
+  }
+
+  set countryFlag(value) {
+    this.props.countryFlag = value;
+    this._renderCountryInfo();
+  }
+
+  get countryFlag() {
+    return this.props.countryFlag;
   }
 
   set lastUpdated(value) {
