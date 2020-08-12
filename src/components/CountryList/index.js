@@ -66,7 +66,8 @@ class CountryList extends HTMLElement {
           bubbles: true,
           composed: true,
           detail: {
-            selectedCountry: event.target.lastChild.textContent,
+            countryFlag: event.currentTarget.firstChild.textContent,
+            selectedCountry: event.currentTarget.lastChild.textContent,
           },
         });
 
