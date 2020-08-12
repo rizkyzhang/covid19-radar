@@ -27,6 +27,13 @@ canvas {
   border-radius: 10px;
 }
 
+
+@media only screen and (min-width: 400px) {
+  :host {
+    height: 300px;
+  }
+}
+
 @media only screen and (min-width: 500px) {
   :host {
     height: 350px;
