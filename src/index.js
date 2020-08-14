@@ -18,20 +18,6 @@ template.innerHTML = `
       display: block;
     }
 
-    :host::-webkit-scrollbar {
-      width: 20px;
-    }
-
-    :host::-webkit-scrollbar-track {
-      background: #222;
-    }
-
-    :host::-webkit-scrollbar-thumb {
-      background-color: #333;
-      border-radius: 20px;
-      border: 5px solid #222;
-    }
-
     .app-title {
       margin-bottom: 1.5rem;
 
@@ -40,10 +26,12 @@ template.innerHTML = `
     }
     
     footer {
-      background: var(--primary-color);
       padding: 1.5rem;
-      border-radius: 10px;
       margin: 3rem 0;
+
+      background: var(--primary-color);
+      border-radius: 10px;
+      
       text-align: center;
     }
 
