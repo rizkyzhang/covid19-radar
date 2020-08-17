@@ -20,13 +20,13 @@ class CountrySelector extends HTMLElement {
     this._shadowRoot = this.attachShadow({ mode: "open" });
     this._shadowRoot.appendChild(template.content.cloneNode(true));
 
-    this.addEventListener("click", event => {
+    this.addEventListener("click", () => {
       const onDropdownToggle = new CustomEvent("onDropdownToggle", {
         bubbles: true,
         composed: true,
       });
 
-      event.target.dispatchEvent(onDropdownToggle);
+      this.dispatchEvent(onDropdownToggle);
     });
   }
 }
