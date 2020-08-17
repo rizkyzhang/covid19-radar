@@ -33,7 +33,7 @@ class CountryList extends HTMLElement {
         composed: true,
       });
 
-      event.target.dispatchEvent(onDropdownToggle);
+      this.dispatchEvent(onDropdownToggle);
     });
   }
 
@@ -71,14 +71,14 @@ class CountryList extends HTMLElement {
           },
         });
 
-        event.target.dispatchEvent(onCountryChanged);
+        this.dispatchEvent(onCountryChanged);
 
         const onDropdownToggle = new CustomEvent("onDropdownToggle", {
           bubbles: true,
           composed: true,
         });
 
-        event.target.dispatchEvent(onDropdownToggle);
+        this.dispatchEvent(onDropdownToggle);
       });
     });
   }
