@@ -57,10 +57,10 @@ class LiveCases extends HTMLElement {
   _renderIndonesiaLiveCases() {
     LiveCases.fetchIndonesiaCovid19Stats().then(indonesiaCovid19Stats => {
       indonesiaCovid19Stats
-        .sort((a, b) => b.Kasus_Posi - a.Kasus_Posi)
+        .sort((a, b) => b.kasusPosi - a.kasusPosi)
         .forEach(provinceCovid19Stats => {
-          const provinceName = provinceCovid19Stats.Provinsi;
-          const provinceLiveCases = provinceCovid19Stats.Kasus_Posi.toLocaleString("en");
+          const provinceName = provinceCovid19Stats.provinsi;
+          const provinceLiveCases = provinceCovid19Stats.kasusPosi.toLocaleString("en");
           const provinceLiveCasesElement = document.createElement("li");
 
           this.$indonesiaLiveCasesElement.appendChild(provinceLiveCasesElement);
@@ -78,7 +78,7 @@ class LiveCases extends HTMLElement {
   }
 
   static async fetchIndonesiaCovid19Stats() {
-    const API = "https://corona.coollabs.work/indonesia/provinsi";
+    const API = "https://indonesia-covid-19.mathdro.id/api/provinsi";
     const indonesiaLiveCases = await ky.get(API).json();
 
     return indonesiaLiveCases;
