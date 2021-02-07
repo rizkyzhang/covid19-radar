@@ -57,6 +57,7 @@ class LiveCases extends HTMLElement {
   _renderIndonesiaLiveCases() {
     LiveCases.fetchIndonesiaCovid19Stats().then(indonesiaCovid19Stats => {
       indonesiaCovid19Stats
+        .data
         .sort((a, b) => b.kasusPosi - a.kasusPosi)
         .forEach(provinceCovid19Stats => {
           const provinceName = provinceCovid19Stats.provinsi;
