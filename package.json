@@ -47,7 +47,7 @@
     "webpack-merge": "^5.1.1"
   },
   "dependencies": {
-    "chart.js": "^2.9.3",
+    "chart.js": "^2.9.4",
     "core-js": "^3.6.5",
     "ky": "^0.23.0",
     "regenerator-runtime": "^0.13.7"
