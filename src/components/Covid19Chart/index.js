@@ -1,4 +1,4 @@
-import Chart from "chart.js";
+import Chart from "chart.js/auto";
 import ky from "ky";
 import style from "!!raw-loader!./style.css";
 
@@ -31,7 +31,7 @@ class Covid19Chart extends HTMLElement {
   }
 
   _renderCovid19Chart(selectedCountry) {
-    Covid19Chart.fetchHistoricalCovid19Stats(selectedCountry).then(historicalCovid19Stats => {
+    Covid19Chart.fetchHistoricalCovid19Stats(selectedCountry).then((historicalCovid19Stats) => {
       const historicalTotalCases = historicalCovid19Stats.cases
         ? historicalCovid19Stats.cases
         : historicalCovid19Stats.timeline.cases;
@@ -71,13 +71,11 @@ class Covid19Chart extends HTMLElement {
         },
         options: {
           scales: {
-            yAxes: [
-              {
-                ticks: {
-                  beginAtZero: true,
-                },
+            y: {
+              ticks: {
+                beginAtZero: true,
               },
-            ],
+            },
           },
           responsive: true,
           maintainAspectRatio: false,
