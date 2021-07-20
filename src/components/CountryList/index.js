@@ -1,5 +1,5 @@
 import style from "!!raw-loader!./style.css";
-import countryListJson from "../../assets/countries.json";
+import countryListJson from "../../data/countries.json";
 
 const template = document.createElement("template");
 
@@ -27,7 +27,7 @@ class CountryList extends HTMLElement {
     this.$countryList = this._shadowRoot.querySelector(".country-list");
 
     this.$searchCountry.addEventListener("input", this._filterCountryList.bind(this));
-    this.$closeDropdownButton.addEventListener("click", event => {
+    this.$closeDropdownButton.addEventListener("click", (event) => {
       const onDropdownToggle = new CustomEvent("onDropdownToggle", {
         bubbles: true,
         composed: true,
@@ -42,7 +42,7 @@ class CountryList extends HTMLElement {
   }
 
   _renderCountryList() {
-    countryListJson.forEach(countryItemJson => {
+    countryListJson.forEach((countryItemJson) => {
       const countryFlag = countryItemJson.flag;
       const countryName = countryItemJson.name;
 
@@ -61,7 +61,7 @@ class CountryList extends HTMLElement {
       countryItem.appendChild(countryNameElement);
       this.$countryList.appendChild(countryItem);
 
-      countryItem.addEventListener("click", event => {
+      countryItem.addEventListener("click", (event) => {
         const onCountryChanged = new CustomEvent("onCountryChanged", {
           bubbles: true,
           composed: true,
@@ -87,7 +87,7 @@ class CountryList extends HTMLElement {
     const text = event.target.value.toLowerCase();
     const countryItems = [...this._shadowRoot.querySelectorAll(".country-list__item")];
 
-    countryItems.forEach(countryItem => {
+    countryItems.forEach((countryItem) => {
       const countryName = countryItem.lastChild.textContent.toLowerCase();
       const regex = new RegExp(`^${text}`, "gi");
 
