@@ -66,12 +66,6 @@ class Covid19Radar extends HTMLElement {
     this._shadowRoot = this.attachShadow({ mode: "open" });
     this._shadowRoot.appendChild(template.content.cloneNode(true));
 
-    this.state = {
-      selectedCountry: "",
-      countryFlag: "",
-      lastUpdated: "",
-    };
-
     this.$countryInfo = this._shadowRoot.querySelector("country-info");
     this.$chevron = this._shadowRoot
       .querySelector("country-selector")
@@ -94,17 +88,14 @@ class Covid19Radar extends HTMLElement {
   }
 
   _updateSelectedCountry(event) {
-    this.state.selectedCountry = event.detail.selectedCountry;
-    this.state.countryFlag = event.detail.countryFlag;
-    this.$countryInfo.selectedCountry = this.state.selectedCountry;
-    this.$countryInfo.countryFlag = this.state.countryFlag;
-    this.$covid19Stats.selectedCountry = this.state.selectedCountry;
-    this.$covid19Chart.selectedCountry = this.state.selectedCountry;
+    this.$countryInfo.selectedCountry = event.detail.selectedCountry;
+    this.$countryInfo.countryFlag = event.detail.countryFlag;
+    this.$covid19Stats.selectedCountry = event.detail.selectedCountry;
+    this.$covid19Chart.selectedCountry = event.detail.selectedCountry;
   }
 
   _updateLastUpdated(event) {
-    this.state.lastUpdated = event.detail.lastUpdated;
-    this.$countryInfo.lastUpdated = this.state.lastUpdated;
+    this.$countryInfo.lastUpdated = event.detail.lastUpdated;
   }
 }
 
