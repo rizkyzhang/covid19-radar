@@ -35,8 +35,28 @@ template.innerHTML = `
       text-align: center;
     }
 
-    .heart {
-      color: red;
+     .designed {
+      -webkit-background-clip: text;
+      -moz-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      -moz-text-fill-color: transparent;
+
+      background: linear-gradient(45deg, #f3ec78, #af4261);
+      background: linear-gradient(45deg, #ffb74d, #fc5857);
+      background-clip: text;
+
+      font-family: 'Dancing Script', sans-serif;
+      font-size: 1.7rem;
+    }
+
+    .coded {
+      padding: 0.2rem;
+
+      background: wheat;
+      border-radius: 5px;
+
+      color: #222;
+      font-family: Inconsolata, sans-serif;
     }
   </style>
 
@@ -56,7 +76,10 @@ template.innerHTML = `
 
   <covid19-info></covid19-info>
 
-  <footer>Created with <span class="heart">❤️</span> by Rizky</footer>
+  <footer>
+    <span class='designed'>designed</span> &
+    <span class='coded'>&lt;/coded&gt;</span> by Rizky
+  </footer>
 `;
 
 class Covid19Radar extends HTMLElement {
