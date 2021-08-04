@@ -36,14 +36,14 @@ template.innerHTML = `
     }
 
      .designed {
+      display: inline block;
+
+      background: linear-gradient(45deg, #ffb74d, #fc5857);
+      background-clip: text;
       -webkit-background-clip: text;
       -moz-background-clip: text;
       -webkit-text-fill-color: transparent;
       -moz-text-fill-color: transparent;
-
-      background: linear-gradient(45deg, #f3ec78, #af4261);
-      background: linear-gradient(45deg, #ffb74d, #fc5857);
-      background-clip: text;
 
       font-family: 'Dancing Script', sans-serif;
       font-size: 1.7rem;
