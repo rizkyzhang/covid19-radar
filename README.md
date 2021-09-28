@@ -4,6 +4,8 @@
 
 A COVID-19 dashboard application consisting of worldwide and Indonesia COVID-19 stats, timeline chart, live cases and prevention tips in an easy to use UI.
 
+[View project](https://covid19radar.netlify.app)
+
 ## Getting Started
 1. Clone this repository  
 ```
