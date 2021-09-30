@@ -29,3 +29,6 @@ npm start
 - chart.js
 - ky
 - [Open Disease Data API](https://disease.sh/) (Worlwide COVID-19 data)
+
+## Todos
+- [ ] Find another province data API as the current one is no longer updated.
