@@ -23,8 +23,9 @@ npm start
 ## Techs
 - HTML
 - CSS
-- JavaScript ES6
+- JavaScript
 - Web Components
-- API
+- Webpack
 - chart.js
 - ky
+- [Open Disease Data API](https://disease.sh/) (Worlwide COVID-19 data)
