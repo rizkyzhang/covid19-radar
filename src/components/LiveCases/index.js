@@ -39,10 +39,10 @@ class LiveCases extends HTMLElement {
   }
 
   _renderWorldwideLiveCases() {
-    LiveCases.fetchWorldwideCovid19Stats().then(worldwideCovid19Stats => {
+    LiveCases.fetchWorldwideCovid19Stats().then((worldwideCovid19Stats) => {
       worldwideCovid19Stats
         .sort((a, b) => b.cases - a.cases)
-        .forEach(countryCovid19Stats => {
+        .forEach((countryCovid19Stats) => {
           const countryName = countryCovid19Stats.country;
           const countryLiveCases = countryCovid19Stats.cases.toLocaleString("en");
           const countryLiveCasesElement = document.createElement("li");
@@ -55,13 +55,12 @@ class LiveCases extends HTMLElement {
   }
 
   _renderIndonesiaLiveCases() {
-    LiveCases.fetchIndonesiaCovid19Stats().then(indonesiaCovid19Stats => {
-      indonesiaCovid19Stats
-        .data.slice(0, 34)
-        .sort((a, b) => b.kasusPosi - a.kasusPosi)
-        .forEach(provinceCovid19Stats => {
-          const provinceName = provinceCovid19Stats.provinsi;
-          const provinceLiveCases = provinceCovid19Stats.kasusPosi.toLocaleString("en");
+    LiveCases.fetchIndonesiaCovid19Stats().then((indonesiaCovid19Stats) => {
+      indonesiaCovid19Stats.list_data
+        .sort((a, b) => b.jumlah_kasus - a.jumlah_kasus)
+        .forEach((provinceCovid19Stats) => {
+          const provinceName = provinceCovid19Stats.key;
+          const provinceLiveCases = provinceCovid19Stats.jumlah_kasus.toLocaleString("en");
           const provinceLiveCasesElement = document.createElement("li");
 
           this.$indonesiaLiveCasesElement.appendChild(provinceLiveCasesElement);
@@ -79,7 +78,7 @@ class LiveCases extends HTMLElement {
   }
 
   static async fetchIndonesiaCovid19Stats() {
-    const API = "https://indonesia-covid-19.mathdro.id/api/provinsi";
+    const API = "https://cool-proxy.herokuapp.com/data.covid19.go.id/public/api/prov.json";
     const indonesiaLiveCases = await ky.get(API).json();
 
     return indonesiaLiveCases;
