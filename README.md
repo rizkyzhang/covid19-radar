@@ -29,6 +29,7 @@ npm start
 - chart.js
 - ky
 - [Open Disease Data API](https://disease.sh/) (Worlwide COVID-19 data)
+- [Indonesia Province COVID-19 API](https://data.covid19.go.id/public/api/prov.json)
 
 ## Todos
-- [ ] Find another province data API as the current one is no longer updated.
+- [x] Find another province data API as the current one is no longer updated.
